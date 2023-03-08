@@ -6,8 +6,9 @@ type Agent struct {
 }
 
 type AgentResponse struct {
-	Input  string
-	Output string
+	Input        string
+	Output       string
+	Satisfactory bool
 }
 
 type Tool struct {
@@ -15,8 +16,12 @@ type Tool struct {
 	Value string
 }
 
-type Chain struct {
-	Name string
+type Chain interface {
+	BaseChain(from *Agent, input *AgentResponse, tools []Tool) error
+}
+
+type ChainResponse struct {
+	Response string
 }
 
 func CreateNewAgent(name string) *Agent {
