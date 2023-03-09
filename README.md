@@ -22,9 +22,10 @@ This code base is a simple library I am developing for AI-powered applications t
 ## Chat with `ChatGPT` In Your Markdown Files Using `doc-tools`, `gpt-tools` and `git-tools`
 Prerequisites:
 - [Install Go on your machine](https://golang.org/doc/install)
-- Open the repository you want to use and run the following command to install this library
-```bash
-go get github.com/asolpshinning/chaingpt/tools
+- Open the repository you want to use and run the following command to install three tool set from this library
+```go
+go get "github.com/asolpshinning/chaingpt/tools/doc-tools" "github.com/asolpshinning/chaingpt/tools/git-tools" "github.com/asolpshinning/chaingpt/tools/gpt-tools"
+
 ```
 -  Add `token="your_chatGpt_openAI_api_token"` to your `.env` file.
 - Remember to add `/gen` as a text to your markdown file to indicate that any text above `/gen` is your prompt to chatGPT.
