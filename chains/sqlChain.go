@@ -6,7 +6,7 @@ import (
 
 	"github.com/asolpshinning/chaingpt/agents/codeAgents"
 	"github.com/asolpshinning/chaingpt/entity"
-	entityTools "github.com/asolpshinning/chaingpt/tools"
+	entityTools "github.com/asolpshinning/chaingpt/tools/db-tools"
 )
 
 var basePrompt = `

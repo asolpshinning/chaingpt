@@ -16,6 +16,9 @@ This code base is a simple library I am developing for AI-powered applications t
 
 ## Example Usage of the Library
 
+<details>
+<summary>Using ChatWithDatabase Chain</summary>
+
 ```go
 package main
 
@@ -63,6 +66,7 @@ func main() {
 ```bash
 token="your_chatGpt_openAI_api_token"
 ```
+</detials>
 
 ## Request for Features
 - Feel free to open an issue if you have any feature request or suggestion. I will try to implement it as soon as I can.

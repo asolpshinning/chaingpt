@@ -2,7 +2,7 @@ package codeAgents
 
 import (
 	"github.com/asolpshinning/chaingpt/entity"
-	"github.com/asolpshinning/chaingpt/tools/gpt"
+	gpt "github.com/asolpshinning/chaingpt/tools/gpt-tools"
 )
 
 func QueryResultToEnglish(queryResult string, tool *entity.Tool) (*entity.AgentResponse, error) {
