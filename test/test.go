@@ -33,7 +33,7 @@ func main() {
 	postgresTools := []*entity.Tool{tool}
 
 	// let the user agent call the SQLChain
-	res, err := chains.StartSQLChain(userAgent, userInput, postgresTools)
+	res, err := chains.ChatWithDatabase(userAgent, userInput, postgresTools)
 	if err != nil {
 		log.Println(err)
 	}

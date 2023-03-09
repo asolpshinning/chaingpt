@@ -23,7 +23,7 @@ var basePrompt = `
 
 `
 
-func StartSQLChain(from *entity.Agent, input *entity.AgentResponse, tools []*entity.Tool) (*entity.ChainResponse, error) {
+func ChatWithDatabase(from *entity.Agent, input *entity.AgentResponse, tools []*entity.Tool) (*entity.ChainResponse, error) {
 	// make sure the tools is not empty (1 in length). If it is then return an error message
 	if len(tools) == 0 {
 		err := errors.New("no tools provided to the chain")
