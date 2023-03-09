@@ -25,12 +25,20 @@ func CopyAboveText(fileName string) (string, error) {
 	// Loop through each line of the file until you reach the line you want to stop at
 	for scanner.Scan() {
 		line := scanner.Text()
-		// Check if it's the line to stop at
-		if strings.Contains(line, "/gpt") {
-			break
-		}
+
 		// Add the line to the string variable
 		str += line + "\n"
+
+		// Check if it's the line to start at and empty the string variable
+		if strings.Contains(line, "/start") {
+			str = ""
+			continue
+		}
+
+		// Check if it's the line to stop at
+		if strings.Contains(line, "/gen") {
+			break
+		}
 	}
 	file.Close()
 	return str, nil

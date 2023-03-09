@@ -27,7 +27,7 @@ Prerequisites:
 go get "github.com/asolpshinning/chaingpt/tools/doc-tools" "github.com/asolpshinning/chaingpt/tools/git-tools" "github.com/asolpshinning/chaingpt/tools/gpt-tools"
 ```
 -  Add `token="your_chatGpt_openAI_api_token"` to your `.env` file.
-- Remember to add `/gen` as a text to your markdown file to indicate that any text above `/gen` is your prompt to chatGPT.
+- Remember to add `/gen` as a text to your markdown file to indicate that any text above `/gen` is your prompt to chatGPT. Also, if you do not want to use all the text in your markdown file as your prompt, you can add `/start` to the line (after which) you want to start your prompt from.
 - Then put the following example in a file called `main.go` in the root of your repository and run `go run main.go` to start chatting in your markdown file.
 - The program will keep running until you stop it. So you only need to run the command once and you can keep chatting.
 
