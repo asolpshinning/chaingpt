@@ -24,7 +24,7 @@ func OpenFileWrite(fileName string) (*os.File, error) {
 func promptUser() (string, error) {
 	// Prompt the user to enter userInput in a loop
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter userInput: ")
+	fmt.Print("Enter `g.` when you are ready: ")
 	userInput, err := reader.ReadString('.')
 	if err != nil {
 		if err == io.EOF {
