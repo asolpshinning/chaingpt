@@ -11,9 +11,15 @@ import (
 
 var basePrompt = `
 	You are a powerful AI that can convert user's text or chat to SQL code, and the code you provide can be used to query a database.
-	You will be provided back the result of the query in this format "RESULT: <result>". You will then interpret the result and 
-	provide a response back to the user in this format "RESPONSE: <response>". Below will show how you are processing your thoughts clearly
-	and thinking out loud.
+	You will be provided back the result of the query as an observation. You will then interpret the result and 
+	provide a response back to the user. Below will show how you are processing your thoughts clearly
+	and thinking out loud. It is going to be in the following format. The final answer you need to give will be an observation. Only reply with 
+	ONE final observation. DO NOT reply with any actions. The actions are only for you to see how you are processing your thoughts. 
+		Observation: <observation>
+		Action: <action>
+		Observation: <observation>
+		Action: <action>
+		Observation: ??
 
 `
 
@@ -60,9 +66,11 @@ func StartSQLChain(from *entity.Agent, input *entity.AgentResponse, tools []*ent
 
 	basePrompt += "Observation: " + "Result from the database => " + resultFromDB + "\n"
 
-	basePrompt += "Action: Converting the result observed above to good response in english back to user " + "\n"
+	basePrompt += "Action: Converting the result observed above to good response in english back to user. " + "\n"
 
-	englishAgentResponse, err := codeAgents.ProcessDBqueryResult(resFromTextToSQL.Output, tools[0])
+	basePrompt += "Now answer the user's question. They do not have answer yet: " + input.Output + "\n"
+
+	englishAgentResponse, err := codeAgents.QueryResultToEnglish(basePrompt, tools[0])
 	if err != nil {
 		log.Println(err)
 		return nil, err
@@ -72,7 +80,8 @@ func StartSQLChain(from *entity.Agent, input *entity.AgentResponse, tools []*ent
 		Response: englishAgentResponse.Output,
 	}
 
-	log.Println(basePrompt)
+	//log.Println(basePrompt)
+	log.Println("THIS IS THE END OF THE CHAIN")
 
 	return chainResponse, nil
 }

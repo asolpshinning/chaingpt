@@ -1,0 +1,6 @@
+github.com/asolpshinning/db2-warehouse v0.0.0-20230203202837-0f13d80d2f44 h1:Bvj2wcoY40re9oBqu3auGc3aWJBF3Al5rNbkg9EwLb8=
+github.com/asolpshinning/db2-warehouse v0.0.0-20230203202837-0f13d80d2f44/go.mod h1:PwSJFUoxMeHMms2mF6WwBqLliV6ZdwE9hArW1LNn1Ws=
+github.com/joho/godotenv v1.4.0 h1:3l4+N6zfMWnkbPEXKng2o2/MR5mSwTrBih4ZEkkz1lg=
+github.com/joho/godotenv v1.4.0/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
+github.com/sashabaranov/go-openai v1.5.0 h1:4Gr/7g/KtVzW0ddn7TC2aUlyzvhZBIM+qRZ6Ae2kMa0=
+github.com/sashabaranov/go-openai v1.5.0/go.mod h1:lj5b/K+zjTSFxVLijLSTDZuP7adOgerWeFyZLUhAKRg=

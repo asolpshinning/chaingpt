@@ -15,7 +15,7 @@ func main() {
 	}
 
 	// create a user prompt
-	userPrompt := "I want to know how many new messages I have on Sunday and Monday."
+	userPrompt := "I want to know how many new messages I have on Friday and Sunday."
 
 	// create user agent's input or prompt to the chain
 	userInput := &entity.AgentResponse{
@@ -37,5 +37,5 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(res.Response)
+	fmt.Println("response: " + res.Response)
 }
