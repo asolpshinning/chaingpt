@@ -23,17 +23,38 @@ var basePrompt = `
 
 `
 
+// This is Chain-type function that has the purpose of helping achieve natural language conversation with a database
+// The tool set provided must include a databaseQuery tool (index = 0) and a gpt tool (index = 1)
 func ChatWithDatabase(from *entity.Agent, input *entity.AgentResponse, tools []*entity.Tool) (*entity.ChainResponse, error) {
-	// make sure the tools is not empty (1 in length). If it is then return an error message
-	if len(tools) == 0 {
-		err := errors.New("no tools provided to the chain")
+	// make sure the tools is not empty or 1 in length). If it is then return an error message
+	if len(tools) != 2 {
+		err := errors.New("two tools need to be provided to the chain")
 		log.Println(err)
 		return nil, err
 	}
 
-	// check if tools[0].Value is "postgres", then let agents.textToSQL do the work
-	if tools[0].Value != "postgres" {
-		err := errors.New("the tool provided to the chain is not yet supported")
+	// if tools[0].Type is not "gpt", then return an error message
+	if tools[0].Type != "gpt" {
+		err := errors.New("the first tool in your tool set is not a gpt tool")
+		log.Println(err)
+		return nil, err
+	}
+
+	// if tools[0].Value is not "chatGPT", then return an error message
+	if tools[0].Value != "chatGPT" && tools[0].Value != "flanT5" {
+		err := errors.New("the gpt tool type provided to the chain is not yet supported")
+		log.Println(err)
+		return nil, err
+	}
+
+	// check if tools[1].Type is "databaseQuery", then let agents.textToSQL do the work
+	if tools[1].Type != "databaseQuery" {
+		err := errors.New("the second tool in your tool set is not a database query tool")
+		log.Println(err)
+		return nil, err
+	}
+	if tools[1].Value != "postgres" {
+		err := errors.New("the databaseQuery tool type provided to the chain is not yet supported")
 		log.Println(err)
 		return nil, err
 	}

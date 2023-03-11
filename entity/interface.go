@@ -12,12 +12,9 @@ type AgentResponse struct {
 }
 
 type Tool struct {
+	Type  string
 	Name  string
 	Value string
-}
-
-type Chain interface {
-	BaseChain(from *Agent, input *AgentResponse, tools []Tool) error
 }
 
 type ChainResponse struct {
