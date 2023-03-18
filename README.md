@@ -19,7 +19,7 @@ This code base is a simple library I am developing for AI-powered applications t
 # Example Usage of the Library
 ***
 
-## Chat with `ChatGPT` In Your Markdown Files Using `doc-tools`, `gpt-tools` and `git-tools`
+## Chat with `ChatGPT` In Your Files  When Writing Code Using `doc-tools`, `gpt-tools` and `git-tools`
 Prerequisites:
 - [Install Go on your machine](https://golang.org/doc/install)
 - Open the repository you want to use and run the following command to install three tool set from this library
