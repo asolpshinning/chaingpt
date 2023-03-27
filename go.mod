@@ -6,6 +6,7 @@ require (
 	github.com/asolpshinning/db2-warehouse v0.0.0-20230203202837-0f13d80d2f44
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/sashabaranov/go-openai v1.5.0
+	gonum.org/v1/gonum v0.12.0
 )
 
 require (
