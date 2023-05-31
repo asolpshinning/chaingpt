@@ -7,6 +7,9 @@ import (
 	openai "github.com/sashabaranov/go-openai"
 )
 
+// This function returns a response from ChatGPT given the prompt. Don't forget to set your OPENAI API key in .env for this to work!
+//
+// This function uses the model GPT-3.5-turbo.
 func ChatGPT(prompt string) (string, error) {
 	token := utils.GoDotEnv("token")
 	client := openai.NewClient(token)
