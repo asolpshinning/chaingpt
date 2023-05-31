@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-// this function opens the file and returns the current contents of the file and the file
+// This function opens the file and returns the current contents of the file and the file.
 func OpenFileWrite(fileName string) (*os.File, error) {
 	// Open the file for reading and writing
 	file, err := os.OpenFile(fileName, os.O_WRONLY|os.O_APPEND, 0644)
@@ -20,7 +20,7 @@ func OpenFileWrite(fileName string) (*os.File, error) {
 	return file, nil
 }
 
-// this function prompts the user for input and returns the input without the delimiter '.' and newline characters
+// This function prompts the user for input and returns the input without the delimiter '.' and newline characters.
 func promptUser() (string, error) {
 	// Prompt the user to enter userInput in a loop
 	reader := bufio.NewReader(os.Stdin)
