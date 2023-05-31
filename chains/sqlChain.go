@@ -23,8 +23,8 @@ var basePrompt = `
 
 `
 
-// This is Chain-type function that has the purpose of helping achieve natural language conversation with a database
-// The tool set provided must include a databaseQuery tool (index = 0) and a gpt tool (index = 1)
+// This is Chain-type function that has the purpose of helping achieve natural language conversation with a database.
+// The tool set provided must include a databaseQuery tool (index = 0) and a gpt tool (index = 1).
 func ChatWithDatabase(from *entity.Agent, input *entity.AgentResponse, tools []*entity.Tool) (*entity.ChainResponse, error) {
 	// make sure the tools is not empty or 1 in length). If it is then return an error message
 	if len(tools) != 2 {

@@ -8,7 +8,7 @@ import (
 	"github.com/fsnotify/fsnotify"
 )
 
-// This function watches a git folder for changes and automatically commits and pushes the changes to the Git folder repository
+// This function watches a git folder for changes and automatically commits and pushes the changes to the Git folder repository.
 func GitAutoCommitPush(folderPath string, timeInterval int) {
 
 	// Watch for changes to the project folder... let us see if this works
